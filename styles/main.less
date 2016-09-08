@@ -1,0 +1,50 @@
+@import "base/_reset";
+@import "helpers/_fonts";
+@import "helpers/_variables-and-mixins";
+
+
+
+body{
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
+  font-weight: normal;
+  font-size: 62.5%;
+  color: @white;
+  background-color: @middle-gray;
+  .box-sizing(border-box);
+  position: relative;
+}
+
+*{
+  .box-sizing(border-box);
+}
+
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.clear{
+  zoom: 1;
+
+  &:after{
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+header{
+
+  .top{
+    background-color: @black;
+  }
+
+  .bottom{
+    background-color: @dark-gray;
+  }
+}
