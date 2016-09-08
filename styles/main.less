@@ -1,16 +1,18 @@
 @import "base/_reset";
 @import "helpers/_fonts";
 @import "helpers/_variables-and-mixins";
-
-
+@import "components/font-awesome-4.6.3/less/font-awesome";
+@import "components/bootstrap 4.0/css/bootstrap.min.css";
 
 body{
-  font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
-  font-weight: normal;
-  font-size: 62.5%;
-  color: @white;
-  background-color: @middle-gray;
   .box-sizing(border-box);
+  background-color: @middle-gray;
+  color: @white;
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0;
+  min-width: 320px;
   position: relative;
 }
 
@@ -19,7 +21,7 @@ body{
 }
 
 .container{
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -38,13 +40,166 @@ a{
   color: white;
 }
 
+img{
+  max-width: 100%;
+}
+
+h1,h2,h3,h4{
+  color: @dark-gray;
+}
+
+h1,h2{
+  text-transform: uppercase;
+}
+
+h3{
+  font-size: 0.8em;
+}
+
+header, main, footer{
+
+}
+
 header{
+  width: 100%;
 
-  .top{
+  .container{
+    padding: 0 10px;
+  }
+
+  .header-top{
+    width: 100%;
     background-color: @black;
+
+    .logo{
+      color: @middle-gray;
+      font-weight: bold;
+      text-transform: uppercase;
+      .transition(.2s all ease-in-out);
+
+      &:hover{
+        color: @white;
+        text-shadow: 0 0 3px @white;
+      }
+    }
+
+    nav{
+
+      a{
+        padding: 15px 0;
+        color: @middle-gray;
+        .transition(.2s all ease-in-out);
+        border-bottom: 1px solid transparent;
+        text-align: center;
+        margin-right: 40px;
+
+        &:hover{
+          color: @white;
+          border-bottom-color: @white;
+        }
+      }
+    }
+
+    .search{
+
+      #search-input{
+        margin-right: 30px;
+        padding: 10px;
+        background: none;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid @white;
+
+        &:focus{
+          background: @white;
+        }
+      }
+
+      .fa-search{
+        flex: 1 1;
+        display: flex;
+      }
+    }
   }
 
-  .bottom{
-    background-color: @dark-gray;
+  .header-bottom{
+    padding: 30px;
+    width: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#251042+0,2a3468+100 */
+    background: rgb(37,16,66); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(37,16,66,1) 0%, rgba(42,52,104,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(37,16,66,1) 0%,rgba(42,52,104,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(37,16,66,1) 0%,rgba(42,52,104,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#251042', endColorstr='#2a3468',GradientType=0 ); /* IE6-9 */
+
+    .container{
+      display: block;
+    }
+
+    h1{
+      padding: 10px 0;
+      color: @white;
+      text-transform: uppercase;
+      text-shadow: 0 0 3px @white;
+    }
+
+    p{
+      margin-bottom: 50px;
+    }
   }
+}
+
+main{
+  color: @black;
+  margin: auto;
+  width: 100%;
+
+  h2{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    font-size: 1em;
+
+  }
+
+  .container{
+    background-color: @white;
+    box-shadow: 0 0 3px @dark-gray-rgba;
+    margin-top: -30px;
+  }
+
+  .news{
+
+  }
+
+  aside{
+
+    h2{
+      color: @dark-gray;
+    }
+
+    &.sidebar{
+
+      h2{
+        color: @dark-gray;
+      }
+    }
+
+    &.follow{
+
+      h2{
+        color: @white;
+        background: rgb(80,114,153);
+      }
+    }
+  }
+
+
+}
+
+footer{
+  width: 100%;
+  margin: auto;
+  padding: 15px;
+  background-color: @black;
 }
