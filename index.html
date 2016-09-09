@@ -12,7 +12,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <!--Веб-апп на весь экран мобильного браузера END-->
 
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
     <!--Плитки для рабочего стола WP-->
     <meta name="msapplication-TileColor" content=""/>
@@ -58,50 +58,57 @@
         <header>
             <section class="header-top">
                 <div class="container">
-                    <a href="" class="logo">Bukmeker.by</a>
-                    <nav>
-                        <a href="#">Главная</a>
-                        <a href="#">Популярное</a>
-                        <a href="#">Категории</a>
-                        <a href="#">Форум</a>
-                        <a href="#">О нас</a>
-                    </nav>
-                    <form class="search" action="">
-                        <input type="text" id="search-input">
-                        <label for="search-input" class="fa fa-search" aria-hidden="true"><a href="#"></a></label>
-                    </form>
+                    <div class="row">
+                        <a href="" class="logo col-xs-3 col-xl-2">Bukmeker.by</a>
+                        <form class="search  offset-xs-1 col-xs-6 col-xl-3" action="">
+                            <input type="text" id="search-input">
+                            <label for="search-input" class="fa fa-search" aria-hidden="true"><a href="#"></a></label>
+                        </form>
+                        <nav class="col-xs-3 col-xl-6">
+                            <a href="#">Главная</a>
+                            <a href="#">Популярное</a>
+                            <a href="#">Категории</a>
+                            <a href="#">Форум</a>
+                            <a href="#">О нас</a>
+                        </nav>
+
+                    </div>
                 </div>
             </section>
             <section class="header-bottom">
                 <div class="container">
                     <h1>Bukmeker.by</h1>
-                    <p>новости топ-букмейкерских контор</p>
+                    <p>Рейтинг топ-букмейкерских контор</p>
                 </div>
             </section>
         </header>
-        <main>
-            <div class="container">
-                <section class="news">
-                    <h2>Новости</h2>
-                    <article>
-                        <h3>Как отмечают победу болельщики "Динамо"</h3>
-                    </article>
-                </section>
-                <aside class="sidebar">
-                    <h2>Больше</h2>
-                    <article>
-                        <h3>Форум</h3>
-                    </article>
-                </aside>
-                <aside class="follow">
-                    <h2>Мы в соц.сетях</h2>
-                    <article>
-                        <h3>Вконтакте</h3>
-                    </article>
-                </aside>
-            </div>
+        <main class="container row">
+            <section class="news col-xs-12 col-md-12 col-xl-6">
+                <h2>Новости</h2>
+                <article>
+                    <h3>Как отмечают победу болельщики "Динамо"</h3>
+                </article>
+            </section>
+            <aside class="sidebar col-xs-12 col-md-6 col-xl-4">
+                <h2>Больше</h2>
+                <article>
+                    <h3>Форум</h3>
+                </article>
+            </aside>
+            <aside class="follow col-xs-12 col-md-6 col-xl-2">
+                <h2>Мы в соц.сетях</h2>
+                <article>
+                    <h3>Вконтакте</h3>
+                </article>
+            </aside>
         </main>
-        <footer></footer>
+        <footer class="container">
+            <section class="col-xs-4 col-xl-4"></section>
+            <section class="col-xs-4 col-xl-4"></section>
+            <section class="col-xs-4 col-xl-4"></section>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
         <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     </body>
 </html>

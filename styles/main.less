@@ -57,19 +57,21 @@ h3{
 }
 
 header, main, footer{
-
+  width: 100%;
 }
 
 header{
-  width: 100%;
-
-  .container{
-    padding: 0 10px;
-  }
-
   .header-top{
+    vertical-align: middle;
     width: 100%;
     background-color: @black;
+    padding: 5px 0;
+
+    .logo, nav, .search{
+      display: inline-block;
+      vertical-align: middle;
+      padding: 10px;
+    }
 
     .logo{
       color: @middle-gray;
@@ -83,27 +85,11 @@ header{
       }
     }
 
-    nav{
-
-      a{
-        padding: 15px 0;
-        color: @middle-gray;
-        .transition(.2s all ease-in-out);
-        border-bottom: 1px solid transparent;
-        text-align: center;
-        margin-right: 40px;
-
-        &:hover{
-          color: @white;
-          border-bottom-color: @white;
-        }
-      }
-    }
-
     .search{
+      padding: 0;
 
       #search-input{
-        margin-right: 30px;
+        margin-right: 20px;
         padding: 10px;
         background: none;
         outline: none;
@@ -116,8 +102,22 @@ header{
       }
 
       .fa-search{
-        flex: 1 1;
-        display: flex;
+        cursor: pointer;
+      }
+    }
+
+    nav{
+
+      a{
+        padding: 15px 0;
+        color: @middle-gray;
+        .transition(.2s all ease-in-out);
+        text-align: center;
+        margin-right: 40px;
+
+        &:hover{
+          color: @white;
+        }
       }
     }
   }
@@ -149,26 +149,17 @@ header{
   }
 }
 
-main{
+main.container{
   color: @black;
-  margin: auto;
-  width: 100%;
+  margin: -30px auto 0;
+  background-color: @white;
+  box-shadow: 0 0 3px @dark-gray-rgba;
 
   h2{
     width: 100%;
     display: block;
     padding: 10px;
     font-size: 1em;
-
-  }
-
-  .container{
-    background-color: @white;
-    box-shadow: 0 0 3px @dark-gray-rgba;
-    margin-top: -30px;
-  }
-
-  .news{
 
   }
 
@@ -192,6 +183,10 @@ main{
         background: rgb(80,114,153);
       }
     }
+  }
+
+  .news{
+
   }
 
 
