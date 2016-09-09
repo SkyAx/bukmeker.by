@@ -72,6 +72,12 @@ a{
   color: white;
 }
 
+em{
+  font-size: 0.8em;
+  font-style: normal;
+  color: @middle-gray;
+}
+
 img{
   max-width: 100%;
 }
@@ -258,15 +264,24 @@ header{
 
 main{
   min-height: 1000px;
+  color: @dark-blue;
+  background-color: @light-gray;
+  box-shadow: 0 0 3px @dark-gray-rgba;
 
   &.container{
     padding: 0;
     margin: -30px auto 0;
   }
 
-  color: @dark-blue;
-  background-color: @white;
-  box-shadow: 0 0 3px @dark-gray-rgba;
+  article{
+    padding: 15px;
+    margin: 10px 0;
+    background-color: @white;
+
+    &:not(:nth-child(odd)){
+      margin: 10px 10px 10px 0;
+    }
+  }
 
   h2{
     flex: none;
@@ -275,7 +290,7 @@ main{
     display: block;
     padding: 15px;
     font-size: 1em;
-    background-color: @light-gray;
+    background-color: @white;
     color: @dark-blue;
   }
 
@@ -290,17 +305,15 @@ main{
   }
 
   .news{
-    padding: 15px;
     display: flex;
     justify-content: flex-start;
     flex-flow: column wrap;
     flex: 1 1 45%;
-    margin: 10px;
     vertical-align: top;
     cursor: pointer;
     overflow: hidden;
-    background-color: @light-gray-rgba;
     .transition(.3s all ease-in-out);
+
 
     h3{
       font-weight: bold;
@@ -325,19 +338,90 @@ main{
     }
 
     &:hover{
-      box-shadow: 5px -5px 5px 0 @light-gray-rgba;
+      box-shadow: 0px 0px 5px 0 @light-gray-rgba;
       .scale(1.02);
     }
   }
 
   aside{
 
+    .forecast{
+      cursor: pointer;
+      margin-right: 0;
+      .transition(.3s all ease-in-out);
+
+      .info{
+        span{
+          color: @dark-gray;
+          font-size: 0.9em;
+
+          &.fa-clock-o::before{
+            color: @middle-gray;
+          }
+        }
+      }
+
+      &:hover{
+        box-shadow: 0px 0px 5px 0 @light-gray-rgba;
+        .scale(1.02);
+      }
+    }
 
     &.follow{
+      text-align: center;
+      vertical-align: middle;
 
       h2{
+        text-align: left;
         color: @white;
         background: rgb(80,114,153);
+      }
+
+      a{
+        width: 130px;
+        height: 130px;
+        color: @white;
+        display: block;
+        font-size: 2.5em;
+        text-decoration: none;
+        border-radius: 50%;
+        line-height: 320%;
+        margin: 0 auto 20px;
+        .transition(.3s all ease-in-out);
+        box-shadow: 0 0 10px @dark-gray-rgba;
+
+        &:hover{
+          box-shadow: inset 0 0 10px @dark-gray-rgba;
+          .rotate(360deg);
+          text-shadow: 0 0 5px @white-rgba;
+        }
+      }
+
+      .fa-vk{
+        background-color: rgb(80,114,153);
+      }
+
+      .fa-twitter{
+        background-color: rgb(29,161,242);
+      }
+
+      .fa-facebook{
+        background-color: rgb(59,89,152);
+      }
+
+      .fa-odnoklassniki{
+        background-color: rgb(238,130,8);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  main{
+    aside.follow{
+      a{
+        display: inline-block;
+        margin:3%;
       }
     }
   }
@@ -346,6 +430,6 @@ main{
 footer{
   width: 100%;
   margin: auto;
-  padding: 15px;
-  background-color: @black;
+  padding: 30px;
+  background-color: @dark-blue;
 }
