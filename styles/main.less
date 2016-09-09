@@ -12,7 +12,7 @@ body{
   font-size: 100%;
   font-weight: normal;
   margin: 0;
-  min-width: 320px;
+  min-width: 390px;
   position: relative;
 }
 
@@ -67,38 +67,41 @@ header{
     background-color: @black;
     padding: 5px 0;
 
-    .logo, nav, .search{
+    .logo, nav{
       display: inline-block;
       vertical-align: middle;
       padding: 10px;
     }
 
     .logo{
+      text-decoration: none;
       color: @middle-gray;
       font-weight: bold;
       text-transform: uppercase;
       .transition(.2s all ease-in-out);
 
-      &:hover{
+      &:hover, &:active{
         color: @white;
         text-shadow: 0 0 3px @white;
       }
     }
 
-    .search{
-      padding: 0;
+    form{
+      text-align: right;
+    }
 
-      #search-input{
-        margin-right: 20px;
-        padding: 10px;
-        background: none;
-        outline: none;
-        border: none;
-        border-bottom: 1px solid @white;
+    #search-input{
+      display: inline-block;
+      width: 93%;
+      margin-right: 20px;
+      padding: 6px;
+      background: none;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid @white;
 
-        &:focus{
-          background: @white;
-        }
+      &:focus{
+        background: @white;
       }
 
       .fa-search{
@@ -106,7 +109,24 @@ header{
       }
     }
 
+    .drop-down-button{
+      display: block;
+      text-align: right;
+      font-size: 2.3em;
+      color: @middle-gray;
+
+      &:hover, &:active{
+        color: @white;
+        text-decoration: none;
+      }
+
+      &.active{
+        color: @white;
+      }
+    }
+
     nav{
+      display: block;
 
       a{
         padding: 15px 0;
@@ -115,21 +135,79 @@ header{
         text-align: center;
         margin-right: 40px;
 
-        &:hover{
+        &:hover, &:active{
           color: @white;
         }
       }
     }
   }
 
+
+  ////////////////////////
+  /////MEDIA-REQUIRED/////
+  ////////////////////////
+
+  @media (max-width: 768px){
+    .header-top{
+      nav{
+        display: none;
+        text-align: center;
+
+        &.active{
+          display: block;
+        }
+
+        a{
+          display: block;
+          margin: 0;
+          padding: 10px;
+
+          &:hover, &:active{
+            text-decoration-color: @purple;
+          }
+        }
+      }
+    }
+
+  }
+
+  @media (max-width: 1200px){
+
+    nav{
+      margin-top: 10px;
+      text-align: center;
+      display: block;
+
+      a{
+        margin: 0 20px;
+        &:hover, &:active{
+          text-shadow: 0 0 3px @white-rgba;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+
+  form{
+    &.col-xs-5{
+      #search-input{
+        width: 80%;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  //////////////////////////
+  ////MEDIA-REQUIRED END////
+  //////////////////////////
+
   .header-bottom{
     padding: 30px;
     width: 100%;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#251042+0,2a3468+100 */
-    background: rgb(37,16,66); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(37,16,66,1) 0%, rgba(42,52,104,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  rgba(37,16,66,1) 0%,rgba(42,52,104,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  rgba(37,16,66,1) 0%,rgba(42,52,104,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: @purple; /* Old browsers */
+    background: -moz-linear-gradient(top, @purple 0%, @dark-blue 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  @purple 0%, @dark-blue 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  @purple 0%, @dark-blue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#251042', endColorstr='#2a3468',GradientType=0 ); /* IE6-9 */
 
     .container{
@@ -149,9 +227,12 @@ header{
   }
 }
 
-main.container{
+main{
+  &.container{
+    margin: -30px auto 0;
+  }
+
   color: @black;
-  margin: -30px auto 0;
   background-color: @white;
   box-shadow: 0 0 3px @dark-gray-rgba;
 
@@ -188,8 +269,6 @@ main.container{
   .news{
 
   }
-
-
 }
 
 footer{
