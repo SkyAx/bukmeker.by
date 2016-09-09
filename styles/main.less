@@ -14,6 +14,20 @@ body{
   margin: 0;
   min-width: 390px;
   position: relative;
+
+  &::-webkit-scrollbar{
+    width: 0.2em;
+  }
+
+  &::-webkit-scrollbar-track{
+    background-color: @white;
+  }
+
+  &::-webkit-scrollbar-thumb{
+    border: 1px solid @purple;
+    border-radius: 1000px;
+    background-color: @purple;
+  }
 }
 
 *{
@@ -35,6 +49,24 @@ body{
   }
 }
 
+.more-button{
+  padding: 7px;
+  font-size: 0.7em;
+  color: @white;
+  font-weight: bold;
+  border-radius: 3px;
+  background: @purple; /* Old browsers */
+  background: -moz-linear-gradient(top, @purple 0%, @dark-blue 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  @purple 0%, @dark-blue 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  @purple 0%, @dark-blue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#251042', endColorstr='#2a3468',GradientType=0 ); /* IE6-9 */
+
+
+  &:hover{
+    color: @white;
+  }
+}
+
 a{
   text-decoration: none;
   color: white;
@@ -45,15 +77,12 @@ img{
 }
 
 h1,h2,h3,h4{
+  font-family: 'Cuprum', sans-serif;
   color: @dark-gray;
 }
 
 h1,h2{
   text-transform: uppercase;
-}
-
-h3{
-  font-size: 0.8em;
 }
 
 header, main, footer{
@@ -228,34 +257,81 @@ header{
 }
 
 main{
+  min-height: 1000px;
+
   &.container{
+    padding: 0;
     margin: -30px auto 0;
   }
 
-  color: @black;
+  color: @dark-blue;
   background-color: @white;
   box-shadow: 0 0 3px @dark-gray-rgba;
 
   h2{
+    flex: none;
+    font-weight: bold;
     width: 100%;
     display: block;
-    padding: 10px;
+    padding: 15px;
     font-size: 1em;
+    background-color: @light-gray;
+    color: @dark-blue;
+  }
 
+  .news-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+  }
+
+  h2{
+    display: block;
+  }
+
+  .news{
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    flex: 1 1 45%;
+    margin: 10px;
+    vertical-align: top;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: @light-gray-rgba;
+    .transition(.3s all ease-in-out);
+
+    h3{
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1em;
+      margin-bottom: 15px;
+    }
+
+    img{
+      width: 100%;
+    }
+
+    p{
+      margin: 10px 0;
+      font-size: 0.85em;
+      line-height: 120%;
+    }
+
+    .more-button{
+      margin-top: auto;
+      align-self: flex-end;
+    }
+
+    &:hover{
+      box-shadow: 5px -5px 5px 0 @light-gray-rgba;
+      .scale(1.02);
+    }
   }
 
   aside{
 
-    h2{
-      color: @dark-gray;
-    }
-
-    &.sidebar{
-
-      h2{
-        color: @dark-gray;
-      }
-    }
 
     &.follow{
 
@@ -264,10 +340,6 @@ main{
         background: rgb(80,114,153);
       }
     }
-  }
-
-  .news{
-
   }
 }
 
